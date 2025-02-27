@@ -1,0 +1,36 @@
+<main>
+<mypath path={this.path} ></mypath>
+ 
+<div class="columns">  
+<menu class="column" SendForm={this.addTab} UpdatePath={this.UpdatePath} blabla={blalba} ></menu> 
+<etablissement_tab class="column" if ={this.formation !== ""} formation={this.formation} libelle={this.libelle} count={this.count} ></etablissement_tab>
+ 
+</div>
+        <script>
+            export default {
+                path :[],
+                formation: "",
+                count: "",
+                libelle: "",
+                onMounted(){
+                    
+                    riot.mount("menu",{UpdatePath:this.UpdatePath,SendForm:this.addTab})
+                },
+                UpdatePath(p){  
+                        this.path = p
+                        this.update()
+                },
+
+             addTab(f,l, c){
+                
+                if(f+l != this.formation+ this.libelle ){
+                    this.libelle=l
+                    this.formation = f
+                    this.count = c
+                    this.update()
+                    }
+                }
+
+            }
+        </script>
+</main>

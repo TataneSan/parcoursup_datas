@@ -2,6 +2,30 @@
 
 #map { height: 180px; }
 
+.badge {
+    display: inline-block;
+    padding: 0.3em 0.6em;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+  }
+  
+  .badge-public {
+    background-color: cyan;
+    color: black;
+    border-color: #007bff;
+  }
+  
+  .badge-prive {
+    background-color: lightyellow;
+    color: black;
+    border-color: #ffcc00;
+  }
+  
 
 
 

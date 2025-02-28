@@ -44,8 +44,13 @@
                     </tfoot>
                     <tbody>
                 <tr class="js-modal-trigger row" data-target="modal-js-example" each={item in this.items} >
-                  <td>{item.g_ea_lib_vx}  
-                  <button class="js-modal-trigger" data-target="modal-js-example" onclick = {() => MakeModal(item) }>+info</button>
+               <td>
+               {item.g_ea_lib_vx}
+               <span class="badge {item.contrat_etab.toLowerCase() === 'public' ? 'badge-public' : 'badge-prive'}">
+                  {item.contrat_etab}
+               </span>
+               <button class="js-modal-trigger" data-target="modal-js-example" onclick = {() => MakeModal(item) }>+info</button>
+               </td>
 
 <div class="modal " id="modal" onclick={() =>
    closeMod()}>
@@ -222,21 +227,8 @@
                   <td class="tst">{item.taux_acces_ens}%<progress class="progress is-warning" value={item.taux_acces_ens} max="100">{item.taux_acces_ens}</progress></td>
                 </tr>
                 </tbody>
-
-                
                 </table>
-
-
- 
-    
-
-
-
-             
 <style>
-
-
-
 .tst{
   text-align:center !important;
 }
@@ -380,26 +372,9 @@ background-color:GRAY;
                 return "formation non-sélective"
               }
             },
-
             GetLinkEtab(num_etab){
                return'https://dossier.parcoursup.fr/Candidats/public/fiches/afficherFicheFormation?g_ta_cod='+num_etab
             }
          }
-
-
-
-
-    
-
-
-       
-
-
-
     </script>
-
-
-
-
-
  </etablissement_tab>
